@@ -25,7 +25,7 @@ function HomeScreen({navigation}) {
 function ARScreen() {
   return (
     <WebView
-      source={{uri: "https://reactnative.dev/"}}
+      source={{uri: "https://flat-video-aframe.vercel.app/"}}
       style={{marginBottom: 20, marginTop: 50}}
     />
   );
