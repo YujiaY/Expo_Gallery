@@ -6,6 +6,7 @@ const ExternalARScreen = () => {
     <WebView
       source={{uri: "https://arvr-examples.vercel.app/"}}
       style={{marginBottom: 20, marginTop: 50}}
+      allowsInlineMediaPlayback={true}
     />
   );
 };
