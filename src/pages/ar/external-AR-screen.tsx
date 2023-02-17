@@ -1,15 +1,13 @@
 import React from "react";
 import WebView from "react-native-webview";
 
-const myHtmlFile = require("./index.html");
-
-const WebViewWithLink = () => {
+const ExternalARScreen = () => {
   return (
     <WebView
-      source={{uri: "https://reactnative.dev/"}}
+      source={{uri: "https://flat-video-aframe.vercel.app/"}}
       style={{marginBottom: 20, marginTop: 50}}
     />
   );
 };
 
-export default WebViewWithLink;
+export default ExternalARScreen;

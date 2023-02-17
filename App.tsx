@@ -1,35 +1,9 @@
 import * as React from "react";
-import {Alert, Button, Text, View} from "react-native";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import WebView from "react-native-webview";
-
-function HomeScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
-      <Text>Home Screen</Text>
-      <Button
-        onPress={() => {
-          Alert.alert("Simple Button pressed");
-          console.warn("Going to web view page...");
-          navigation.navigate("Web AR");
-        }}
-        title="Web View"
-        color="#841584"
-        accessibilityLabel="Going to web view page"
-      />
-    </View>
-  );
-}
-
-function ARScreen() {
-  return (
-    <WebView
-      source={{uri: "https://flat-video-aframe.vercel.app/"}}
-      style={{marginBottom: 20, marginTop: 50}}
-    />
-  );
-}
+import BuiltInARScreen from "./src/pages/ar/built-in-AR-screen";
+import ExternalARScreen from "./src/pages/ar/external-AR-screen";
+import HomeScreen from "./src/pages/HomeScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,9 +15,10 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{title: "Overview"}}
+            options={{title: "Home"}}
           />
-          <Stack.Screen name="Web AR" component={ARScreen} />
+          <Stack.Screen name="External Web AR" component={ExternalARScreen} />
+          <Stack.Screen name="Built-in Web AR" component={BuiltInARScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
